@@ -1,0 +1,2 @@
+import {Section,Reveal,Chip} from './Section';import {skills} from '../data';
+export default()=><Section id="skills" eyebrow="Skills" title="My technical toolkit">{skills.map(([t,l],i)=><Reveal key={t}><div className="grid items-center gap-4 border-t border-bd py-6 md:grid-cols-[70px_1fr_2fr]"><em className="font-mono text-xs not-italic text-ac">0{i+1}</em><b className="text-2xl tracking-tight">{t}</b><div className="flex flex-wrap gap-2">{l.map(x=><Chip key={x}>{x}</Chip>)}</div></div></Reveal>)}</Section>

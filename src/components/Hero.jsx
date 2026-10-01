@@ -1,0 +1,9 @@
+import {useEffect,useRef,useState} from 'react';import {animate,useInView} from 'framer-motion';import {Btn,Reveal} from './Section';import {GH,LI} from '../data';
+function Count({n,d=0,s=''}){const r=useRef(),v=useInView(r,{once:true}),[x,setX]=useState(0);useEffect(()=>{if(v)animate(0,n,{duration:1.2,onUpdate:setX})},[v,n]);return<b ref={r} className="block text-5xl font-bold leading-none tracking-tighter">{d?x.toFixed(d):Math.round(x)}{s}</b>}
+const St=[[9.0,'CGPA',1],[50,'LeetCode Problems',0,'+'],[4,'Major Projects'],[2027,'Graduation'],[null,'College Hackathon']];
+export default function Hero(){return<section id="top" className="mx-auto max-w-[1400px] px-[5vw] pb-20 pt-40">
+<Reveal><span className="mb-5 block font-mono text-xs uppercase tracking-[.15em] text-ac">Full-Stack Developer / Software Engineer</span><p className="mb-7 flex items-center gap-2 text-sm"><i className="h-2 w-2 rounded-full bg-green-500"/>Open to Software Engineering Opportunities</p></Reveal>
+<Reveal delay={.1}><h1 className="text-5xl font-bold leading-none tracking-tighter md:text-8xl">Building digital experiences that solve real problems.</h1></Reveal>
+<Reveal delay={.2}><p className="my-8 max-w-2xl text-xl text-mut">I'm Sachin Nanvare, a Computer Science engineering student focused on building scalable web applications, solving problems with DSA, and turning ideas into production-ready software.</p>
+<div className="flex flex-wrap items-center gap-3"><Btn primary href="#projects">View My Work →</Btn><Btn href="/resume.pdf">Download Resume</Btn><Btn small href={GH}>GitHub ↗</Btn><Btn small href={LI}>LinkedIn ↗</Btn></div></Reveal>
+<div className="mt-20 grid grid-cols-2 border-t border-bd md:grid-cols-5">{St.map(([n,l,d,s])=><div key={l} className="border-b border-bd py-7">{n?<Count n={n} d={d} s={s}/>:<b className="block text-5xl font-bold leading-none tracking-tighter">Top 1</b>}<span className="text-sm text-mut">{l}</span></div>)}</div></section>}

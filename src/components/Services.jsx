@@ -1,0 +1,2 @@
+import {Section,Reveal} from './Section';import {services} from '../data';
+export default()=><Section eyebrow="What I build" title="Focus areas"><div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{services.map(([t,d],i)=><Reveal key={t} delay={i*.08}><div className="h-full rounded-3xl border border-bd bg-card p-7 transition hover:-translate-y-1 hover:border-ac"><span className="font-mono text-[13px] text-ac">0{i+1}</span><b className="my-2 block text-xl tracking-tight">{t}</b><p className="text-mut">{d}</p></div></Reveal>)}</div></Section>

@@ -1,0 +1,4 @@
+import {ArrowUp} from 'lucide-react';import {GH,LI} from '../data';
+export default()=><footer className="mx-auto flex max-w-[1400px] flex-wrap justify-between gap-8 px-[5vw] pb-10 pt-16 text-sm"><div><b>SACHIN NANVARE</b><br/><span className="text-mut">Full-Stack Developer / Software Engineer</span></div>
+<div className="flex flex-wrap gap-5">{[['About','#about'],['Skills','#skills'],['Projects','#projects'],['Contact','#contact'],['GitHub',GH],['LinkedIn',LI]].map(([t,h])=><a key={t} href={h} {...(h[0]!=='#'&&{target:'_blank',rel:'noopener noreferrer'})} className="hover:text-ac">{t}</a>)}</div>
+<p className="w-full text-mut">© 2026 Sachin Nanvare. Built with curiosity & code.</p><a href="#top" aria-label="Back to top" className="fixed bottom-5 right-5 rounded-full border border-bd bg-card p-3"><ArrowUp size={18}/></a></footer>

@@ -1,0 +1,2 @@
+import {Section,Reveal} from './Section';
+export default()=><Section id="achievements" eyebrow="Achievements"><div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">{[['🏆 Top 1','College Hackathon'],['💻 50+','LeetCode problems solved'],['🎓 9.0','CGPA'],['🚀 Multiple','Full-stack projects built']].map(([a,b],i)=><Reveal key={a} delay={i*.08}><b className="block text-4xl font-bold leading-tight tracking-tighter md:text-5xl">{a}</b><span className="text-mut">{b}</span></Reveal>)}</div></Section>

@@ -1,0 +1,2 @@
+import {Section} from './Section';import {faq} from '../data';
+export default()=><Section id="faq" eyebrow="FAQ" title="Quick answers">{faq.map(([q,a])=><details key={q} className="group border-t border-bd py-5 last:border-b"><summary className="flex cursor-pointer list-none justify-between text-lg font-semibold">{q}<span className="text-ac group-open:rotate-45 transition">+</span></summary><p className="mt-2 text-mut">{a}</p></details>)}</Section>

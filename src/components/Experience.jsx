@@ -1,0 +1,2 @@
+import {Section,Reveal} from './Section';import {journey} from '../data';
+export default()=><Section id="journey" eyebrow="Developer journey" title="The path so far"><div className="ml-1.5 border-l border-bd">{journey.map(([y,t],i)=><Reveal key={y} delay={i*.05}><div className="relative pb-10 pl-8"><i className="absolute -left-1.5 top-3 h-3 w-3 rounded-full bg-ac"/><b className="text-3xl tracking-tight">{y}</b><p className="text-mut">{t}</p></div></Reveal>)}</div></Section>
